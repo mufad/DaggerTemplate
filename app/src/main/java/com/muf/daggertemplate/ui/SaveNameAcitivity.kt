@@ -16,9 +16,6 @@ class SaveNameAcitivity : AppCompatActivity() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private var savedNameViewModel : SaveNameViewModel?=null
-//
-//    @Inject
-//    var editor: SharedPreferences.Editor?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +25,8 @@ class SaveNameAcitivity : AppCompatActivity() {
 
 
         btn_save.setOnClickListener {
-            //editor?.putString("Name", et_name.text.toString())
+            //Call Viewmodels SaveDataMethod
+            savedNameViewModel?.saveName(et_name.text.toString())
         }
     }
 
